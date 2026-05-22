@@ -17,7 +17,7 @@ export default function CarritoPage() {
     msg += "*Mis productos:*\n";
     items.forEach((i) => { msg += `• ${i.product.name} ×${i.quantity} = ${fmt(i.product.price * i.quantity)}\n`; });
     msg += `\n*Total productos:* ${fmt(total)}`;
-    msg += "\n\n_El envío se coordina por este medio según tu ciudad._";
+    msg += "\n\n_El envío se coordina por este medio._";
     msg += "\n\n*Datos de entrega:*\n• Nombre: \n• Ciudad: \n• Dirección: \n• Teléfono: ";
     window.open(`https://wa.me/${wa}?text=${encodeURIComponent(msg)}`, "_blank");
   };
