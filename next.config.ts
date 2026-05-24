@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
     // Esto le dice a Vercel que no detenga el despliegue por errores de ESLint
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;
