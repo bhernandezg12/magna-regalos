@@ -5,7 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { getProductById, getProducts } from "@/lib/products";
 import AddToCartButton from "./AddToCartButton";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+//export const revalidate = 60;
 
 export async function generateStaticParams() {
   const products = await getProducts();

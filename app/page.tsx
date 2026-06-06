@@ -3,7 +3,8 @@ import { ArrowRight, Truck, MessageCircle, CreditCard, Clock } from "lucide-reac
 import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts, getProducts } from "@/lib/products";
 
-export const revalidate = 60;
+export const dynamic = 'force-dynamic';
+//export const revalidate = 60;
 
 export default async function HomePage() {
   const [featured, all] = await Promise.all([getFeaturedProducts(), getProducts()]);
