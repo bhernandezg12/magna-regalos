@@ -31,7 +31,7 @@ export async function getProducts(onlyActive = true): Promise<Product[]> {
     const snap = await getDocs(q);
     return snap.docs.map((d) => ({ id: d.id, ...d.data() }) as Product);
   } catch (error) {
-    console.error("ERROR EN GETPRODUCTS:", error); // ← solo agrega esto
+    console.error("ERROR EN GETPRODUCTS:", error);
     return [];
   }
 }
