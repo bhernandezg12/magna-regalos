@@ -30,7 +30,8 @@ export async function getProducts(onlyActive = true): Promise<Product[]> {
     const q = query(collection(db, COL), ...constraints);
     const snap = await getDocs(q);
     return snap.docs.map((d) => ({ id: d.id, ...d.data() }) as Product);
-  } catch {
+  } catch (error) {
+    console.error("ERROR EN GETPRODUCTS:", error); // ← solo agrega esto
     return [];
   }
 }

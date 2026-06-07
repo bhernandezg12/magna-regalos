@@ -14,9 +14,17 @@ export default function ProductosPage() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<Category>("Todos");
 
-  useEffect(() => {
-    getProducts().then((p) => { setProducts(p); setLoading(false); });
-  }, []);
+useEffect(() => {
+  console.log("Firebase config:", {
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? "OK" : "FALTA",
+  });
+  getProducts().then(p => {
+    console.log("Productos:", p.length, p);
+    setProducts(p);
+    setLoading(false);
+  });
+}, []);
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
